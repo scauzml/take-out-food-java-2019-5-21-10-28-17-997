@@ -14,8 +14,9 @@ public class AppTest {
     public void should_use_50_percentage_sales_promotion(){
         List<String> inputs = Arrays.asList("ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1");
         App app = new App(new ItemRepositoryTestImpl(), new SalesPromotionRepositoryTestImpl());
-        String receiptString = app.bestCharge(inputs);
 
+        String receiptString = app.bestCharge(inputs);
+        System.out.println("result="+receiptString);
         assertThat(receiptString, is("============= 订餐明细 =============\n" +
                 "黄焖鸡 x 1 = 18元\n" +
                 "肉夹馍 x 2 = 12元\n" +
@@ -35,7 +36,7 @@ public class AppTest {
 
         App app = new App(new ItemRepositoryTestImpl(), new SalesPromotionRepositoryTestImpl());
         String receiptString = app.bestCharge(inputs);
-
+        System.out.println(receiptString);
         assertThat(receiptString, is("============= 订餐明细 =============\n" +
                 "肉夹馍 x 4 = 24元\n" +
                 "凉皮 x 1 = 8元\n" +
@@ -55,7 +56,7 @@ public class AppTest {
 
         App app = new App(new ItemRepositoryTestImpl(), new SalesPromotionRepositoryTestImpl());
         String receiptString = app.bestCharge(inputs);
-
+        System.out.println(receiptString);
         assertThat(receiptString, is("============= 订餐明细 =============\n" +
                 "肉夹馍 x 4 = 24元\n" +
                 "-----------------------------------\n" +
